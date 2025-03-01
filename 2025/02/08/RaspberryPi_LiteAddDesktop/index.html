@@ -79,11 +79,21 @@
                 <div id="loading-circle">
                     <h2>LOADING</h2>
                     <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
+                    <!-- <img src="/images/loading.gif" /> -->
+                    <div>
+                        <div class="bigbox">
+                            <div class="bbbox"></div>
+                            <div class="bwbox"></div>
+                            <div class="sbbox"></div>
+                            <div class="swbox"></div>
+                            <div class="lbbox"></div>
+                            <div class="lwbox"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
-        
+
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
@@ -222,28 +232,28 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #00bcd4">
+                <a href="/tags/Linux/" style="color: #03a9f4">
                     Linux
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Debian/" style="color: #03a9f4">
+                <a href="/tags/Debian/" style="color: #00bcd4">
                     Debian
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Raspberry-Pi/" style="color: #ffa2c4">
+                <a href="/tags/Raspberry-Pi/" style="color: #03a9f4">
                     Raspberry_Pi
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Desktop/" style="color: #03a9f4">
+                <a href="/tags/Desktop/" style="color: #ffa2c4">
                     Desktop
                 </a>
             </span>
@@ -478,6 +488,7 @@
     </div>
     
     <script src="/js/main.js"></script>
+    
 
 
     

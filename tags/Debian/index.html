@@ -75,11 +75,21 @@
                 <div id="loading-circle">
                     <h2>LOADING</h2>
                     <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
+                    <!-- <img src="/images/loading.gif" /> -->
+                    <div>
+                        <div class="bigbox">
+                            <div class="bbbox"></div>
+                            <div class="bwbox"></div>
+                            <div class="sbbox"></div>
+                            <div class="swbox"></div>
+                            <div class="lbbox"></div>
+                            <div class="lwbox"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
-        
+
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
@@ -195,7 +205,7 @@
         
         
         <span>
-            <a href="/tags/Ftp/" style="background: #00a596">
+            <a href="/tags/Ftp/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -206,7 +216,7 @@
         
         
         <span>
-            <a href="/tags/Linux/" style="background: #ff7d73">
+            <a href="/tags/Linux/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -252,7 +262,7 @@
         
         
         <span>
-            <a href="/tags/Raspberry-Pi/" style="background: #03a9f4">
+            <a href="/tags/Raspberry-Pi/" style="background: #ffa2c4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -263,7 +273,7 @@
         
         
         <span>
-            <a href="/tags/Desktop/" style="background: #ffa2c4">
+            <a href="/tags/Desktop/" style="background: #00bcd4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -274,7 +284,7 @@
         
         
         <span>
-            <a href="/tags/Hexo/" style="background: #00a596">
+            <a href="/tags/Hexo/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -285,7 +295,7 @@
         
         
         <span>
-            <a href="/tags/ParticleX/" style="background: #03a9f4">
+            <a href="/tags/ParticleX/" style="background: #00bcd4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -296,7 +306,7 @@
         
         
         <span>
-            <a href="/tags/UI/" style="background: #ff7d73">
+            <a href="/tags/UI/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -334,14 +344,14 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/Linux/" style="color: #00a596">
+                        <a href="/tags/Linux/" style="color: #ffa2c4">
                             Linux
                         </a>
                     </span>
                     
                     <span class="tag">
                         
-                        <a href="/tags/Debian/" style="color: #ff7d73">
+                        <a href="/tags/Debian/" style="color: #00a596">
                             Debian
                         </a>
                     </span>
@@ -393,14 +403,14 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/Ftp/" style="color: #ffa2c4">
+                        <a href="/tags/Ftp/" style="color: #03a9f4">
                             Ftp
                         </a>
                     </span>
                     
                     <span class="tag">
                         
-                        <a href="/tags/Linux/" style="color: #03a9f4">
+                        <a href="/tags/Linux/" style="color: #ffa2c4">
                             Linux
                         </a>
                     </span>
@@ -450,6 +460,7 @@
     </div>
     
     <script src="/js/main.js"></script>
+    
 
 
     

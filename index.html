@@ -77,11 +77,21 @@
                 <div id="loading-circle">
                     <h2>LOADING</h2>
                     <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
+                    <!-- <img src="/images/loading.gif" /> -->
+                    <div>
+                        <div class="bigbox">
+                            <div class="bbbox"></div>
+                            <div class="bwbox"></div>
+                            <div class="sbbox"></div>
+                            <div class="swbox"></div>
+                            <div class="lbbox"></div>
+                            <div class="lwbox"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
-        
+
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
@@ -259,17 +269,17 @@
         
         <span class="tag">
             
-            <a href="/tags/Hexo/" style="color: #00a596">Hexo</a>
+            <a href="/tags/Hexo/" style="color: #03a9f4">Hexo</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/ParticleX/" style="color: #03a9f4">ParticleX</a>
+            <a href="/tags/ParticleX/" style="color: #00bcd4">ParticleX</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/UI/" style="color: #ff7d73">UI</a>
+            <a href="/tags/UI/" style="color: #00a596">UI</a>
         </span>
         
     </div>
@@ -317,7 +327,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
+            <a href="/tags/Linux/" style="color: #00a596">Linux</a>
         </span>
         
         <span class="tag">
@@ -327,12 +337,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Raspberry-Pi/" style="color: #03a9f4">Raspberry_Pi</a>
+            <a href="/tags/Raspberry-Pi/" style="color: #00bcd4">Raspberry_Pi</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Desktop/" style="color: #00a596">Desktop</a>
+            <a href="/tags/Desktop/" style="color: #ff7d73">Desktop</a>
         </span>
         
     </div>
@@ -385,7 +395,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
+            <a href="/tags/Linux/" style="color: #00a596">Linux</a>
         </span>
         
         <span class="tag">
@@ -438,12 +448,12 @@
         
         <span class="tag">
             
-            <a href="/tags/Markdown/" style="color: #ff7d73">Markdown</a>
+            <a href="/tags/Markdown/" style="color: #03a9f4">Markdown</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="color: #ffa2c4">基础语法</a>
+            <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="color: #00a596">基础语法</a>
         </span>
         
     </div>
@@ -563,6 +573,7 @@
     </div>
     
     <script src="/js/main.js"></script>
+    
 
 
     
