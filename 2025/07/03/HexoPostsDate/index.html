@@ -22,12 +22,12 @@
     </script>
 
     <meta charset="utf-8" />
-    <title>tags | nanaall96</title>
+    <title>Hexo文章日期 | nanaall96</title>
     <meta name="author" content="nanaall96" />
     <meta name="description" content="光が道へと導くでしょう。" />
     
     
-        <meta name="keywords" content="前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,Debain,Linux,嵌入式,二次元,game"/>
+        <meta name="keywords" content="Hexo,Date,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,Debain,Linux,嵌入式,二次元,game"/>
     
     <meta
         name="viewport"
@@ -59,6 +59,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -198,122 +202,116 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>Hexo文章日期</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/7/3
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/Ftp/" style="background: #00bcd4">
+        <span class="category">
+            <a href="/categories/Learn/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                Ftp
+                Learn
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/Linux/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Linux
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Hexo/" style="color: #00a596">
+                    Hexo
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Debian/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Debian
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Markdown/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Markdown
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                基础语法
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Raspberry-Pi/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Raspberry_Pi
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Desktop/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Desktop
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Hexo/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Hexo
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/ParticleX/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                ParticleX
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/UI/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                UI
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <h3 id="通过date标签决定Hexo文章的日期"><a href="#通过date标签决定Hexo文章的日期" class="headerlink" title="通过date标签决定Hexo文章的日期"></a>通过date标签决定Hexo文章的日期</h3><span id="more"></span>
+
+<ul>
+<li><p>起因：</p>
+<p>  <code>Hexo文章的日期默认是文件修改日期，稍微动一动之前的文件日期可能就变了，不想这样</code></p>
+</li>
+<li><p>解决方式：</p>
+<ol>
+<li><p>修改文章根目录下_config.yml中的updated_option参数为date</p>
+<ul>
+<li><p>防止有人迷路，这是我们的根目录：</p>
+<pre><code>  -name
+      + node_modules
+      + public
+      + scaffolds
+      + source
+      + themes
+      + _config.landscape.yml
+      + _config.yml  //编辑这个文件
+      + db.json
+      ...
+</code></pre>
+<p>  这里的name是你自己hexo init时候创建的名字</p>
+</li>
+<li><p>在里面找到这两行</p>
+<pre><code>  ## updated_option supports &#39;mtime&#39;, &#39;date&#39;, &#39;empty&#39;
+  updated_option: &#39;mtime&#39;
+</code></pre>
+<p>  将updated_option后面的mtime参数为date</p>
+<pre><code>  ## updated_option supports &#39;mtime&#39;, &#39;date&#39;, &#39;empty&#39;
+  updated_option: &#39;date&#39;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>写文章的时候需要加上date标签</p>
+<ul>
+<li><p>像这样子：</p>
+<pre><code>  ---
+  title: Hexo文章日期
+  date: 2025-7-3 9:52
+  ---
+</code></pre>
+<p>  <code>注意之前的文章最好全都加上date标签,不然可能会出bug(</code></p>
+</li>
+</ul>
+</li>
+<li><p>看看结果如何</p>
+<p> <code>hexo c</code></p>
+<hr>
+<p> <code>hexo g</code></p>
+<hr>
+<p> <code>hexo s</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h4 id="Ciallo"><a href="#Ciallo" class="headerlink" title="Ciallo~"></a>Ciallo~</h4>
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
     
 </div>
 
@@ -351,6 +349,29 @@
 
 
     
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="wangqqh963/wangqqh963.github.io"
+    data-repo-id="R_kgDOM3A80A"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOM3A80M4CngU0"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="noborder_light"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
     
     
     
