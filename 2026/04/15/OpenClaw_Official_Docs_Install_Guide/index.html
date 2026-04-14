@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) https://analytics.google.com/ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LVB7LS3TC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-5LVB7LS3TC');
+    </script>
+
+    <!-- https://clarity.microsoft.com/ -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "qa5xzi2mms");
+    </script>
+
+    <meta charset="utf-8" />
+    <title>OpenClaw 安装指南 | nanaall96</title>
+    <meta name="author" content="nanaall96" />
+    <meta name="description" content="光が道へと導くでしょう。" />
+    
+    
+        <meta name="keywords" content="OpenClaw,安装教程,AI助手,个人助理,前端博客,JavaScript,html5,css3,Jquery,NodeJs,Ubuntu,Debain,Linux,嵌入式,二次元,game"/>
+    
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.png" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <!-- <img src="/images/loading.gif" /> -->
+                    <div>
+                        <div class="bigbox">
+                            <div class="bbbox"></div>
+                            <div class="bwbox"></div>
+                            <div class="sbbox"></div>
+                            <div class="swbox"></div>
+                            <div class="lbbox"></div>
+                            <div class="lwbox"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>NANAALL96</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/links">
+            <i class="fa-solid fa-link fa-fw"></i>
+            <span>&ensp;Links</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;NANAALL96</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/links">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-link fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Links</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>OpenClaw 安装指南</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/4/15
+        </span>
+        
+        <span class="category">
+            <a href="/categories/Technology/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Technology
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/OpenClaw/" style="color: #00a596">
+                    OpenClaw
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/AI%E5%8A%A9%E6%89%8B/" style="color: #03a9f4">
+                    AI助手
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="color: #ffa2c4">
+                    安装教程
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/" style="color: #03a9f4">
+                    官方文档
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="OpenClaw-安装指南"><a href="#OpenClaw-安装指南" class="headerlink" title="OpenClaw 安装指南"></a>OpenClaw 安装指南</h3><span id="more"></span>
+
+<ul>
+<li><p>什么是 OpenClaw？</p>
+<p>  <code>OpenClaw 是一个开源的个人 AI 助手，运行在你自己的设备上。它通过你已经在使用的通信渠道（QQ、Telegram、Discord、WhatsApp 等）与你对话，可以帮你处理消息、执行任务、管理文件。简单说，就是给你一个专属的 AI 管家！</code></p>
+<p> <code>这篇文章基本是让ai抄官方文档的，你也可以直接访问官方教程</code></p>
+<p> <a target="_blank" rel="noopener" href="https://docs.openclaw.ai/start/getting-started">Getting Started</a></p>
+</li>
+</ul>
+<h2 id="🚀-推荐安装方式：安装器脚本"><a href="#🚀-推荐安装方式：安装器脚本" class="headerlink" title="🚀 推荐安装方式：安装器脚本"></a>🚀 推荐安装方式：安装器脚本</h2><p>OpenClaw 官方推荐使用安装器脚本，这是最快最简单的安装方式：</p>
+<h3 id="macOS-Linux-WSL2"><a href="#macOS-Linux-WSL2" class="headerlink" title="macOS &#x2F; Linux &#x2F; WSL2"></a>macOS &#x2F; Linux &#x2F; WSL2</h3><pre><code class="bash">curl -fsSL https://openclaw.ai/install.sh | bash
+</code></pre>
+<h3 id="Windows-PowerShell"><a href="#Windows-PowerShell" class="headerlink" title="Windows (PowerShell)"></a>Windows (PowerShell)</h3><pre><code class="powershell">iwr -useb https://openclaw.ai/install.ps1 | iex
+</code></pre>
+<p>安装器脚本会自动：</p>
+<ol>
+<li>检测你的操作系统</li>
+<li>安装 Node.js（如果需要）</li>
+<li>安装 OpenClaw</li>
+<li>启动 onboarding 向导</li>
+</ol>
+<h3 id="不运行-onboarding-向导"><a href="#不运行-onboarding-向导" class="headerlink" title="不运行 onboarding 向导"></a>不运行 onboarding 向导</h3><p>如果你只想安装而不运行向导：</p>
+<pre><code class="bash"># macOS/Linux/WSL2
+curl -fsSL https://openclaw.ai/install.sh | bash -s -- --no-onboard
+
+# Windows PowerShell
+&amp; ([scriptblock]::Create((iwr -useb https://openclaw.ai/install.ps1))) -NoOnboard
+</code></pre>
+<h2 id="📋-系统要求"><a href="#📋-系统要求" class="headerlink" title="📋 系统要求"></a>📋 系统要求</h2><h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><ul>
+<li><strong>macOS</strong> (推荐)</li>
+<li><strong>Linux</strong> (所有主流发行版)</li>
+<li><strong>Windows</strong> (原生 Windows 或 WSL2，WSL2 更稳定)</li>
+</ul>
+<h3 id="软件要求"><a href="#软件要求" class="headerlink" title="软件要求"></a>软件要求</h3><ul>
+<li><strong>Node.js 24</strong> (推荐) 或 Node.js 22.14+</li>
+<li><strong>npm、pnpm 或 bun</strong> 包管理器</li>
+<li>仅从源码构建时需要 <code>pnpm</code></li>
+</ul>
+<h2 id="🔧-其他安装方法"><a href="#🔧-其他安装方法" class="headerlink" title="🔧 其他安装方法"></a>🔧 其他安装方法</h2><h3 id="1-本地前缀安装器-install-cli-sh"><a href="#1-本地前缀安装器-install-cli-sh" class="headerlink" title="1. 本地前缀安装器 (install-cli.sh)"></a>1. 本地前缀安装器 (<code>install-cli.sh</code>)</h3><p>当你希望 OpenClaw 和 Node.js 都安装在本地前缀（如 <code>~/.openclaw</code>）下，不依赖系统级 Node.js：</p>
+<pre><code class="bash">curl -fsSL https://openclaw.ai/install-cli.sh | bash
+</code></pre>
+<p>支持 npm 安装和 git checkout 安装。</p>
+<h3 id="2-使用包管理器"><a href="#2-使用包管理器" class="headerlink" title="2. 使用包管理器"></a>2. 使用包管理器</h3><h4 id="npm-推荐"><a href="#npm-推荐" class="headerlink" title="npm (推荐)"></a>npm (推荐)</h4><pre><code class="bash">npm install -g openclaw@latest
+openclaw onboard --install-daemon
+</code></pre>
+<h4 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h4><pre><code class="bash">pnpm add -g openclaw@latest
+pnpm approve-builds -g  # 首次安装需要批准构建
+openclaw onboard --install-daemon
+</code></pre>
+<h4 id="bun"><a href="#bun" class="headerlink" title="bun"></a>bun</h4><pre><code class="bash">bun add -g openclaw@latest
+openclaw onboard --install-daemon
+</code></pre>
+<p><strong>注意</strong>：Bun 仅支持 CLI 安装路径，Gateway 运行时仍推荐使用 Node.js。</p>
+<h3 id="3-从源码安装"><a href="#3-从源码安装" class="headerlink" title="3. 从源码安装"></a>3. 从源码安装</h3><p>适合贡献者或希望从本地 checkout 运行的用户：</p>
+<pre><code class="bash">git clone https://github.com/openclaw/openclaw.git
+cd openclaw
+pnpm install &amp;&amp; pnpm ui:build &amp;&amp; pnpm build
+pnpm link --global
+openclaw onboard --install-daemon
+</code></pre>
+<p>或者跳过 link，直接从仓库内使用 <code>pnpm openclaw ...</code>。</p>
+<h3 id="4-从-GitHub-main-分支安装"><a href="#4-从-GitHub-main-分支安装" class="headerlink" title="4. 从 GitHub main 分支安装"></a>4. 从 GitHub main 分支安装</h3><pre><code class="bash">npm install -g github:openclaw/openclaw#main
+</code></pre>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p>安装完成后，验证一切正常：</p>
+<pre><code class="bash"># 确认 CLI 可用
+openclaw --version
+
+# 检查配置问题
+openclaw doctor
+
+# 验证 Gateway 运行状态
+openclaw gateway status
+</code></pre>
+<h2 id="⚙️-安装后管理"><a href="#⚙️-安装后管理" class="headerlink" title="⚙️ 安装后管理"></a>⚙️ 安装后管理</h2><h3 id="托管启动（推荐）"><a href="#托管启动（推荐）" class="headerlink" title="托管启动（推荐）"></a>托管启动（推荐）</h3><p>安装后，设置托管启动以确保 OpenClaw 在系统启动时自动运行：</p>
+<h4 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h4><p>通过 LaunchAgent 托管：</p>
+<pre><code class="bash">openclaw onboard --install-daemon
+# 或
+openclaw gateway install
+</code></pre>
+<h4 id="Linux-WSL2"><a href="#Linux-WSL2" class="headerlink" title="Linux&#x2F;WSL2"></a>Linux&#x2F;WSL2</h4><p>通过 systemd 用户服务托管：</p>
+<pre><code class="bash">openclaw onboard --install-daemon
+# 或
+openclaw gateway install
+</code></pre>
+<h4 id="原生-Windows"><a href="#原生-Windows" class="headerlink" title="原生 Windows"></a>原生 Windows</h4><ol>
+<li>首先创建计划任务</li>
+<li>如果任务创建被拒绝，回退到每用户 Startup 文件夹登录项</li>
+</ol>
+<h3 id="手动启动"><a href="#手动启动" class="headerlink" title="手动启动"></a>手动启动</h3><p>如果你不想设置托管启动，可以手动启动：</p>
+<pre><code class="bash"># 启动 Gateway
+openclaw gateway start
+
+# 停止 Gateway
+openclaw gateway stop
+
+# 查看状态
+openclaw gateway status
+
+# 查看日志
+openclaw gateway logs --follow
+</code></pre>
+<h2 id="🐛-故障排除"><a href="#🐛-故障排除" class="headerlink" title="🐛 故障排除"></a>🐛 故障排除</h2><h3 id="openclaw-命令未找到"><a href="#openclaw-命令未找到" class="headerlink" title="openclaw 命令未找到"></a><code>openclaw</code> 命令未找到</h3><p>如果安装成功但 <code>openclaw</code> 命令不可用：</p>
+<pre><code class="bash"># 检查 Node.js 是否安装
+node -v
+
+# 检查全局包安装位置
+npm prefix -g
+
+# 检查 PATH 环境变量
+echo &quot;$PATH&quot;
+</code></pre>
+<p>如果 <code>$(npm prefix -g)/bin</code> 不在你的 PATH 中，添加到 shell 启动文件：</p>
+<pre><code class="bash"># 对于 bash/zsh
+export PATH=&quot;$(npm prefix -g)/bin:$PATH&quot;
+
+# 然后打开新终端
+</code></pre>
+<h3 id="sharp-构建错误-npm"><a href="#sharp-构建错误-npm" class="headerlink" title="sharp 构建错误 (npm)"></a>sharp 构建错误 (npm)</h3><p>如果 <code>sharp</code> 包因全局安装的 libvips 失败：</p>
+<pre><code class="bash">SHARP_IGNORE_GLOBAL_LIBVIPS=1 npm install -g openclaw@latest
+</code></pre>
+<h3 id="pnpm-构建批准"><a href="#pnpm-构建批准" class="headerlink" title="pnpm 构建批准"></a>pnpm 构建批准</h3><p>pnpm 需要对有构建脚本的包进行显式批准：</p>
+<pre><code class="bash"># 首次安装后运行
+pnpm approve-builds -g
+</code></pre>
+<h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><h3 id="1-运行-onboarding-向导"><a href="#1-运行-onboarding-向导" class="headerlink" title="1. 运行 onboarding 向导"></a>1. 运行 onboarding 向导</h3><pre><code class="bash">openclaw onboard
+</code></pre>
+<p>向导会引导你完成：</p>
+<ul>
+<li>网关设置</li>
+<li>工作空间配置</li>
+<li>通信渠道连接</li>
+<li>技能安装</li>
+</ul>
+<h3 id="2-访问-Web-界面"><a href="#2-访问-Web-界面" class="headerlink" title="2. 访问 Web 界面"></a>2. 访问 Web 界面</h3><p>启动后访问：<code>http://localhost:18789</code></p>
+<h3 id="3-配置通信渠道"><a href="#3-配置通信渠道" class="headerlink" title="3. 配置通信渠道"></a>3. 配置通信渠道</h3><p>通过配置文件或向导添加：</p>
+<ul>
+<li>QQ 机器人</li>
+<li>Telegram 机器人</li>
+<li>Discord 机器人</li>
+<li>其他支持的渠道</li>
+</ul>
+<h3 id="4-安装技能-Skills"><a href="#4-安装技能-Skills" class="headerlink" title="4. 安装技能(Skills)"></a>4. 安装技能(Skills)</h3><pre><code class="bash"># 查看可用技能
+openclaw skills list
+
+# 安装技能
+openclaw skills install weather
+openclaw skills install calendar
+</code></pre>
+<h2 id="💡-实际生产环境配置建议"><a href="#💡-实际生产环境配置建议" class="headerlink" title="💡 实际生产环境配置建议"></a>💡 实际生产环境配置建议</h2><h3 id="安全建议"><a href="#安全建议" class="headerlink" title="安全建议"></a>安全建议</h3><ol>
+<li><p><strong>保护配置文件</strong></p>
+<pre><code class="bash">chmod 600 ~/.openclaw/openclaw.json
+</code></pre>
+</li>
+<li><p><strong>使用环境变量存储敏感信息</strong></p>
+<pre><code class="bash">export OPENAI_API_KEY=&quot;your-key&quot;
+</code></pre>
+</li>
+<li><p><strong>定期备份配置</strong></p>
+<pre><code class="bash">openclaw backup create
+</code></pre>
+</li>
+</ol>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ol>
+<li><p><strong>调整日志级别</strong></p>
+<pre><code class="bash">openclaw config set logging.level &quot;warn&quot;
+</code></pre>
+</li>
+<li><p><strong>监控资源使用</strong></p>
+<pre><code class="bash">openclaw stats
+</code></pre>
+</li>
+</ol>
+<hr>
+<h2 id="📚-资源链接"><a href="#📚-资源链接" class="headerlink" title="📚 资源链接"></a>📚 资源链接</h2><ul>
+<li><strong>官方网站</strong>: <a target="_blank" rel="noopener" href="https://openclaw.ai/">https://openclaw.ai</a></li>
+<li><strong>官方文档</strong>: <a target="_blank" rel="noopener" href="https://docs.openclaw.ai/">https://docs.openclaw.ai</a></li>
+<li><strong>GitHub 仓库</strong>: <a target="_blank" rel="noopener" href="https://github.com/openclaw/openclaw">https://github.com/openclaw/openclaw</a></li>
+<li><strong>Discord 社区</strong>: <a target="_blank" rel="noopener" href="https://discord.gg/clawd">https://discord.gg/clawd</a></li>
+<li><strong>探索技能市场</strong>: <a target="_blank" rel="noopener" href="https://clawhub.ai/">ClawHub</a></li>
+<li><strong>学习技能开发</strong>: <a target="_blank" rel="noopener" href="https://docs.openclaw.ai/concepts/skills">Skills Guide</a></li>
+<li><strong>配置更多渠道</strong>: <a target="_blank" rel="noopener" href="https://docs.openclaw.ai/channels">Channels</a></li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2024 - 2026 nanaall96
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;nanaall96
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+        <div>
+            备案号：
+            
+            <a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20251270">萌ICP备20251270号</a>
+            
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+   
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    
+    <script src="/js/main.js"></script>
+    
+
+
+    
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="wangqqh963/wangqqh963.github.io"
+    data-repo-id="R_kgDOM3A80A"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOM3A80M4CngU0"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="noborder_light"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+    
+    
+    
+</body>
+</html>
