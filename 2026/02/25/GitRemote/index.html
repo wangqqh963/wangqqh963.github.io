@@ -232,14 +232,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/Git/" style="color: #00bcd4">
+                <a href="/tags/Git/" style="color: #ffa2c4">
                     Git
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Github/" style="color: #03a9f4">
+                <a href="/tags/Github/" style="color: #00bcd4">
                     Github
                 </a>
             </span>
@@ -265,20 +265,20 @@
 <ol>
 <li><p>初始化仓库</p>
 <p> 在目录下使用<code>git init</code>初始化本目录为一个仓库</p>
-<pre><code> git init
+<pre><code class="bash">git init
 </code></pre>
 <p> 可有可无，把默认的分支名字改成了main</p>
-<pre><code> git branch -M main
+<pre><code class="bash">git branch -M main
 </code></pre>
 </li>
 <li><p>添加文件</p>
 <p> 初始化仓库后使用<code>git add &lt;filename&gt;</code>添加任务文件</p>
-<pre><code> git add ./
+<pre><code class="bash">git add ./
 </code></pre>
 </li>
 <li><p>提交版本</p>
 <p> 现在我们已经添加了这些文件，我们希望它们能够真正被保存在Git仓库。</p>
-<pre><code> git commit -m &quot;a commit&quot;
+<pre><code class="bash">git commit -m &quot;a commit&quot;
 </code></pre>
 </li>
 </ol>
@@ -291,18 +291,18 @@
 <ol>
 <li><p>添加远程库</p>
 <p> 要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用,命令格式如下：</p>
-<pre><code> git remote add [shortname] [url]
+<pre><code class="bash">git remote add [shortname] [url]
 </code></pre>
 <p> 用起来是这样的</p>
-<pre><code> git remote add origin git@github.com:you/gitrepository.git
+<pre><code class="bash">git remote add origin git@github.com:you/gitrepository.git
 </code></pre>
 </li>
 <li><p>推送仓库内容</p>
-<pre><code> git push -u origin main
+<pre><code class="bash">git push -u origin main
 </code></pre>
 </li>
 <li><p>拉取仓库内容</p>
-<pre><code> git pull origin main
+<pre><code class="bash">git pull origin main
 </code></pre>
 </li>
 </ol>

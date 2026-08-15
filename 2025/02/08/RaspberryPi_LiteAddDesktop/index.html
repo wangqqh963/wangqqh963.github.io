@@ -232,28 +232,28 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #ff7d73">
-                    Linux
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Debian/" style="color: #00bcd4">
-                    Debian
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Raspberry-Pi/" style="color: #00a596">
+                <a href="/tags/Raspberry-Pi/" style="color: #00bcd4">
                     Raspberry_Pi
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Desktop/" style="color: #03a9f4">
+                <a href="/tags/Linux/" style="color: #03a9f4">
+                    Linux
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Debian/" style="color: #00a596">
+                    Debian
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Desktop/" style="color: #ffa2c4">
                     Desktop
                 </a>
             </span>
@@ -270,27 +270,34 @@
 </ul>
 <ol>
 <li><p>依次安装Xorg、xinit，加-y参数安装过程自动确认，需要下载和安装的时间比较长，建议泡个茶喝个咖啡什么滴。</p>
-<p> <code>sudo apt-get install --no-install-recommends xserver-xorg -y</code></p>
-<p> <code>sudo apt-get install --no-install-recommends xinit -y</code></p>
+<pre><code class="bash">sudo apt-get install --no-install-recommends xserver-xorg -y
+</code></pre>
+<pre><code class="bash">sudo apt-get install --no-install-recommends xinit -y
+</code></pre>
 </li>
 <li><p>安装桌面GUI类型，按个人爱好选其一：</p>
 <ul>
 <li><p>Raspberry Pi Desktop (RPD) GUI</p>
-<p><code>sudo apt-get install raspberrypi-ui-mods -y</code></p>
+<pre><code class="bash">sudo apt-get install raspberrypi-ui-mods -y
+</code></pre>
 </li>
 <li><p>LXDE GUI</p>
-<p><code>sudo apt-get install lxde-core lxappearance  -y</code></p>
+<pre><code class="bash">sudo apt-get install lxde-core lxappearance  -y
+</code></pre>
 </li>
 <li><p>XFCE GUI</p>
-<p><code>sudo apt-get install xfce4 xfce4-terminal -y</code></p>
+<pre><code class="bash">sudo apt-get install xfce4 xfce4-terminal -y
+</code></pre>
 </li>
 </ul>
 </li>
 <li><p>安装登陆管理器</p>
-<p> <code>sudo apt-get install lightdm</code></p>
+<pre><code class="bash">sudo apt-get install lightdm
+</code></pre>
 </li>
 <li><p>设置自动进入桌面</p>
-<p> <code>sudo raspi-config</code></p>
+<pre><code class="bash">sudo raspi-config
+</code></pre>
 </li>
 <li><p>到了这里不同的版本界面会可能有很大的区别，我大概用表格给你们看看我的。(截图太吃空间就不用了喵~)</p>
 <blockquote>

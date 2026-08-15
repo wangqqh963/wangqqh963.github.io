@@ -232,21 +232,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #00a596">
+                <a href="/tags/Hexo/" style="color: #00bcd4">
                     Hexo
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/ParticleX/" style="color: #00bcd4">
+                <a href="/tags/ParticleX/" style="color: #03a9f4">
                     ParticleX
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/UI/" style="color: #ff7d73">
+                <a href="/tags/UI/" style="color: #ffa2c4">
                     UI
                 </a>
             </span>
@@ -267,7 +267,7 @@
 </li>
 <li><p>注意：</p>
 <p>  <code>使用API获取名言</code></p>
-<p>  <code>还有想不到暂时（</code></p>
+<p>  <code>quote.js更新</code></p>
 </li>
 <li><p>食用方式：</p>
 <ol>
@@ -280,29 +280,29 @@
 </ul>
 </li>
 <li><p>编写js，我让ai写的。不得不说ai真好用啊。</p>
-<p> <code>把下面复制到quote.js里即可</code></p>
-<pre><code> // 定义回调函数
- function handleQuoteResponse(data) &#123;
-     const quoteText = data.quoteText || &quot;No quote available&quot;;
-     const quoteAuthor = data.quoteAuthor || &quot;Unknown&quot;;
+<p> <del>把下面复制到quote.js里即可</del><br> 该js使用的api已经过时<br> <a href="#quote_js">点击定位到最新的js文件</a></p>
+<pre><code class="js">// 定义回调函数
+function handleQuoteResponse(data) &#123;
+    const quoteText = data.quoteText || &quot;No quote available&quot;;
+    const quoteAuthor = data.quoteAuthor || &quot;Unknown&quot;;
 
-     // 将名言插入到页面中
-     const quoteContainer = document.getElementById(&quot;quote-container&quot;);
-     quoteContainer.innerHTML = `
-             &lt;h4&gt;$&#123;quoteText&#125;&lt;/h4&gt;
-             &lt;footer&gt;— $&#123;quoteAuthor&#125;&lt;/footer&gt;
-     `;
- &#125;
+    // 将名言插入到页面中
+    const quoteContainer = document.getElementById(&quot;quote-container&quot;);
+    quoteContainer.innerHTML = `
+            &lt;h4&gt;$&#123;quoteText&#125;&lt;/h4&gt;
+            &lt;footer&gt;— $&#123;quoteAuthor&#125;&lt;/footer&gt;
+    `;
+&#125;
 
- // 动态创建 script 标签来发起 JSONP 请求
- function fetchQuote() &#123;
-     const script = document.createElement(&quot;script&quot;);
-     script.src = &quot;https://api.forismatic.com/api/1.0/?method=getQuote&amp;format=jsonp&amp;lang=en&amp;jsonp=handleQuoteResponse&quot;;
-     document.head.appendChild(script);
- &#125;
+// 动态创建 script 标签来发起 JSONP 请求
+function fetchQuote() &#123;
+    const script = document.createElement(&quot;script&quot;);
+    script.src = &quot;https://api.forismatic.com/api/1.0/?method=getQuote&amp;format=jsonp&amp;lang=en&amp;jsonp=handleQuoteResponse&quot;;
+    document.head.appendChild(script);
+&#125;
 
- // 在页面加载时调用 fetchQuote 函数
- document.addEventListener(&quot;DOMContentLoaded&quot;, fetchQuote);
+// 在页面加载时调用 fetchQuote 函数
+document.addEventListener(&quot;DOMContentLoaded&quot;, fetchQuote);
 </code></pre>
 <blockquote>
 <p>当然你也可以直接从我的github或者网站上直接获取文件，我就不多介绍了。</p>
@@ -311,66 +311,65 @@
 <li><p>之后修改<code>themes\particlex\layout\index.ejs</code>文件。</p>
 <ol>
 <li><p>首先在</p>
-<pre><code> &lt;div class=&quot;wrap&quot;&gt;
-     &lt;h1&gt;&lt;%= config.title %&gt;&lt;/h1&gt;
-     &lt;h3&gt;&lt;%= config.subtitle %&gt;&lt;/h3&gt;
-     &lt;h5&gt;&lt;%= config.description %&gt;&lt;/h5&gt;
- &lt;/div&gt;
+<pre><code class="js">&lt;div class=&quot;wrap&quot;&gt;
+    &lt;h1&gt;&lt;%= config.title %&gt;&lt;/h1&gt;
+    &lt;h3&gt;&lt;%= config.subtitle %&gt;&lt;/h3&gt;
+    &lt;h5&gt;&lt;%= config.description %&gt;&lt;/h5&gt;
+&lt;/div&gt;
 </code></pre>
 <p> 的<code>class=&quot;wrap&quot;</code> 后加上<code>id=&quot;quote-container&quot;</code></p>
 </li>
 <li><p>然后在最后插入</p>
-<pre><code> &lt;script src=&quot;&lt;%- url_for(&#39;/js/customjs/quote.js&#39;)%&gt;&quot;&gt;&lt;/script&gt;
+<pre><code class="js">&lt;script src=&quot;&lt;%- url_for(&#39;/js/customjs/quote.js&#39;)%&gt;&quot;&gt;&lt;/script&gt;
 </code></pre>
 </li>
 <li><p>改完后应该是这样的</p>
-<pre><code> &lt;div id=&quot;home-head&quot;&gt;
-     &lt;div
-         id=&quot;home-background&quot;
-         ref=&quot;homeBackground&quot;
-         data-images=&quot;&lt;%- theme.background.map(url_for) %&gt;&quot;
-     &gt;&lt;/div&gt;
-     &lt;div id=&quot;home-info&quot; @click=&quot;homeClick&quot;&gt;
-         &lt;span class=&quot;loop&quot;&gt;&lt;/span&gt;
-         &lt;span class=&quot;loop&quot;&gt;&lt;/span&gt;
-         &lt;span class=&quot;loop&quot;&gt;&lt;/span&gt;
-         &lt;span class=&quot;loop&quot;&gt;&lt;/span&gt;
-         &lt;span class=&quot;info&quot;&gt;
-             &lt;div class=&quot;wrap&quot; id=&quot;quote-container&quot;&gt;
-                 &lt;h1&gt;&lt;%= config.title %&gt;&lt;/h1&gt;
-                 &lt;h3&gt;&lt;%= config.subtitle %&gt;&lt;/h3&gt;
-                 &lt;h5&gt;&lt;%= config.description %&gt;&lt;/h5&gt;
-             &lt;/div&gt;
-         &lt;/span&gt;
-     &lt;/div&gt;
- &lt;/div&gt;
- &lt;div
-     id=&quot;home-posts-wrap&quot;
-     ref=&quot;homePostsWrap&quot;
-     &lt;%- theme.card.enable || &#39;class=&quot;home-posts-wrap-no-card&quot;&#39; %&gt;
- &gt;
-     &lt;div id=&quot;home-posts&quot;&gt;
-         &lt;%- partial(&quot;posts&quot;) %&gt;
-         &lt;%- partial(&quot;current&quot;) %&gt;
-     &lt;/div&gt;
-     &lt;% if (theme.card.enable) &#123; %&gt;
-     &lt;div id=&quot;home-card&quot;&gt;
-         &lt;%- partial(&quot;card&quot;) %&gt;
-     &lt;/div&gt;
-     &lt;% &#125; %&gt;
- &lt;/div&gt;
+<pre><code class="js">&lt;div id=&quot;home-head&quot;&gt;
+    &lt;div
+        id=&quot;home-background&quot;
+        ref=&quot;homeBackground&quot;
+        data-images=&quot;&lt;%- theme.background.map(url_for) %&gt;&quot;
+    &gt;&lt;/div&gt;
+    &lt;div id=&quot;home-info&quot; @click=&quot;homeClick&quot;&gt;
+        &lt;span class=&quot;loop&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;loop&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;loop&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;loop&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;info&quot;&gt;
+            &lt;div class=&quot;wrap&quot; id=&quot;quote-container&quot;&gt;
+                &lt;h1&gt;&lt;%= config.title %&gt;&lt;/h1&gt;
+                &lt;h3&gt;&lt;%= config.subtitle %&gt;&lt;/h3&gt;
+                &lt;h5&gt;&lt;%= config.description %&gt;&lt;/h5&gt;
+            &lt;/div&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div
+    id=&quot;home-posts-wrap&quot;
+    ref=&quot;homePostsWrap&quot;
+    &lt;%- theme.card.enable || &#39;class=&quot;home-posts-wrap-no-card&quot;&#39; %&gt;
+&gt;
+    &lt;div id=&quot;home-posts&quot;&gt;
+        &lt;%- partial(&quot;posts&quot;) %&gt;
+        &lt;%- partial(&quot;current&quot;) %&gt;
+    &lt;/div&gt;
+    &lt;% if (theme.card.enable) &#123; %&gt;
+    &lt;div id=&quot;home-card&quot;&gt;
+        &lt;%- partial(&quot;card&quot;) %&gt;
+    &lt;/div&gt;
+    &lt;% &#125; %&gt;
+&lt;/div&gt;
 
- &lt;!-- quote加载 --&gt;
- &lt;script src=&quot;&lt;%- url_for(&#39;/js/customjs/quote.js&#39;)%&gt;&quot;&gt;&lt;/script&gt;
+&lt;!-- quote加载 --&gt;
+&lt;script src=&quot;&lt;%- url_for(&#39;/js/customjs/quote.js&#39;)%&gt;&quot;&gt;&lt;/script&gt;
 </code></pre>
 </li>
 </ol>
 </li>
 <li><p>至此代码部分完结。</p>
-<pre><code> hexo g
+<pre><code class="bash">hexo g
 </code></pre>
-<hr>
-<pre><code> hexo s
+<pre><code class="bash">hexo s
 </code></pre>
 </li>
 </ol>
@@ -383,6 +382,80 @@
 <ul>
 <li>欸嘿，这次没有具体参考链接喵~</li>
 </ul>
+<div id="quote_js"> quote.js </div>
+
+<pre><code class="js">//quote.js
+
+// 1. 定义 API 池
+const apiPool = [
+    //uapi
+    &#123;
+        url: &#39;https://uapis.cn/api/v1/saying&#39;,
+        parser: (data) =&gt; (&#123; text: data.text, author: &#39;&#39; &#125;)
+    &#125;
+];
+
+// 2. 定义默认名言池（本地备用）
+const defaultQuotes = [
+    &#123; text: &#39;人生就像骑自行车。要保持平衡，你必须不断前进。&#39;, author: &#39;爱因斯坦&#39; &#125;,
+    &#123; text: &#39;不要等待机会，而要创造机会。&#39;, author: &#39;乔治·伯纳德·肖&#39; &#125;,
+    &#123; text: &#39;成功的秘诀在于坚持自己的目标。&#39;, author: &#39;本杰明·迪斯雷利&#39; &#125;,
+    &#123; text: &#39;生活中最重要的不是你所处的位置，而是你所朝的方向。&#39;, author: &#39;奥利弗·温德尔·霍姆斯&#39; &#125;,
+    &#123; text: &#39;一瞥便是惊鸿，芳华乱了浮生。&#39;, author: &#39;&#39; &#125;,
+    &#123; text: &#39;慕然回首，那人却在灯火阑珊处。&#39;, author: &#39;辛弃疾&#39; &#125;,
+    &#123; text: &#39;不经一番寒彻骨，怎得梅花扑鼻香。&#39;, author: &#39;陆游&#39; &#125;,
+    &#123; text: &#39;路漫漫其修远兮，吾将上下而求索。&#39;, author: &#39;屈原&#39; &#125;,
+    &#123; text: &#39;海内存知己，天涯若比邻。&#39;, author: &#39;王勃&#39; &#125;,
+    &#123; text: &#39;长风破浪会有时，直挂云帆济沧海。&#39;, author: &#39;李白&#39; &#125;,
+    &#123; text: &#39;千里之行，始于足下。&#39;, author: &#39;老子&#39; &#125;,
+    &#123; text: &#39;学而不思则罔，思而不学则殆。&#39;, author: &#39;孔子&#39; &#125;,
+    &#123; text: &#39;知之者不如好之者，好之者不如乐之者。&#39;, author: &#39;孔子&#39; &#125;,
+];
+
+// 3. 从默认池中随机取一条
+function getRandomDefaultQuote() &#123;
+    const index = Math.floor(Math.random() * defaultQuotes.length);
+    return defaultQuotes[index];
+&#125;
+
+// 4. 从 API 池顺序获取名言
+async function fetchQuoteFromPool() &#123;
+    for (const api of apiPool) &#123;
+        try &#123;
+            const response = await fetch(api.url);
+            if (!response.ok) throw new Error(`HTTP $&#123;response.status&#125;`);
+            const data = await response.json();
+            const parsed = api.parser(data);
+            if (parsed.text &amp;&amp; parsed.text.length &gt; 0) &#123;
+                return parsed; // 成功获取
+            &#125;
+        &#125; catch (error) &#123;
+            console.warn(`API $&#123;api.url&#125; 失败:`, error);
+            // 继续尝试下一个
+        &#125;
+    &#125;
+    // 所有 API 均失败 → 返回随机默认名言
+    return getRandomDefaultQuote();
+&#125;
+
+// 5. 更新页面
+function displayQuote(&#123; text, author &#125;) &#123;
+    const container = document.getElementById(&#39;quote-container&#39;);
+    container.innerHTML = `
+        &lt;h4&gt;$&#123;text || &#39;Unknown&#39;&#125;&lt;/h4&gt;
+        &lt;footer&gt; $&#123;author || &#39;&#39;&#125;&lt;/footer&gt;
+    `;
+&#125;
+
+// 6. 主流程
+async function fetchQuote() &#123;
+    const quote = await fetchQuoteFromPool();
+    displayQuote(quote);
+&#125;
+
+// 7. 页面加载后执行
+document.addEventListener(&#39;DOMContentLoaded&#39;, fetchQuote);
+</code></pre>
 
     </div>
     
